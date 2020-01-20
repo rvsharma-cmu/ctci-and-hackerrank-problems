@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b543a0c-346b-48a8-bab3-3bec26324314" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/rvsharma/Hackerrank/ReverseBitMask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/rvsharma/Hackerrank/TwitterOA/BuyingShowTickets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/rvsharma/Hackerrank/TwitterOA/FountainsNeeded.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/rvsharma/Hackerrank/TwitterOA/KDifference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/rvsharma/leetcode/Graphs/BracketBalance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/rvsharma/leetcode/Graphs/CriticalConnections.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/rvsharma/leetcode/Graphs/WordLadder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/rvsharma/Hackerrank/TwitterOA/EfficientJobProcessing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/rvsharma/Hackerrank/TwitterOA/EfficientJobProcessingOptimized.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ctci/META-INF/ctci.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ctci/META-INF/ctci.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ctci/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,6 +189,14 @@
       <workItem from="1571455390315" duration="3262000" />
       <workItem from="1571691058913" duration="3788000" />
     </task>
+    <task id="LOCAL-00001" summary="twitter oa-2020">
+      <created>1579479184898</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1579479184898</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -203,7 +205,15 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="twitter oa-2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="twitter oa-2020" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="-1315" y="67" key="CommitChangelistDialog2" timestamp="1579479184156">
+      <screen x="-1920" y="-75" width="1920" height="1080" />
+    </state>
+    <state x="-1315" y="67" key="CommitChangelistDialog2/0.0.1440.900/-1920.-75.1920.1080@-1920.-75.1920.1080" timestamp="1579479184156" />
     <state width="1878" height="199" key="GridCell.Tab.0.bottom" timestamp="1579474561481">
       <screen x="-1920" y="-75" width="1920" height="1080" />
     </state>
@@ -228,14 +238,18 @@
       <screen x="-1920" y="-75" width="1920" height="1080" />
     </state>
     <state x="-1144" y="390" key="ReplaceDuplicatesPrompt/0.0.1440.900/-1920.-75.1920.1080@-1920.-75.1920.1080" timestamp="1579298051170" />
+    <state x="-1360" y="205" key="Vcs.Push.Dialog.v2" timestamp="1579479189399">
+      <screen x="-1920" y="-75" width="1920" height="1080" />
+    </state>
+    <state x="-1360" y="205" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-75.1920.1080@-1920.-75.1920.1080" timestamp="1579479189399" />
     <state x="-1222" y="225" width="524" height="484" key="extract.method.dialog" timestamp="1579298044837">
       <screen x="-1920" y="-75" width="1920" height="1080" />
     </state>
     <state x="-1222" y="225" width="524" height="484" key="extract.method.dialog/0.0.1440.900/-1920.-75.1920.1080@-1920.-75.1920.1080" timestamp="1579298044837" />
-    <state width="623" height="230" key="javadoc.popup.new" timestamp="1579474349514">
+    <state width="623" height="230" key="javadoc.popup.new" timestamp="1579488155470">
       <screen x="-1920" y="-75" width="1920" height="1080" />
     </state>
-    <state width="623" height="230" key="javadoc.popup.new/0.0.1440.900/-1920.-75.1920.1080@-1920.-75.1920.1080" timestamp="1579474349514" />
+    <state width="623" height="230" key="javadoc.popup.new/0.0.1440.900/-1920.-75.1920.1080@-1920.-75.1920.1080" timestamp="1579488155470" />
     <state width="467" height="191" key="javadoc.popup.new/0.0.1440.900@0.0.1440.900" timestamp="1577389498955" />
     <state x="-1295" y="166" width="670" height="676" key="search.everywhere.popup" timestamp="1579474866502">
       <screen x="-1920" y="-75" width="1920" height="1080" />
