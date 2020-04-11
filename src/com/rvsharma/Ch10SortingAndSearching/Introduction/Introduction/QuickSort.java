@@ -26,7 +26,7 @@ public class QuickSort {
                 left++;
             }
             while(arr[right] > pivot) {
-                right++;
+                right--;
             }
             if(left <= right){
                 swap(arr, left, right);
@@ -45,7 +45,7 @@ public class QuickSort {
     }
 
     public static void main(String[] args){
-        int[] arr = {1, 4, 5, 2, 8, 9};
+        int[] arr = {1, 4, 9, 2, 8, 5};
 
         System.out.println("Input array is " + Arrays.toString(arr));
         quickSort(arr, 0, arr.length - 1);
