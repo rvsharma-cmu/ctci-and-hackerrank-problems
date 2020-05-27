@@ -28,25 +28,26 @@ public class L0843GuessTheWord {
     }
 
     public void findSecretWord(String[] wordlist, Master master) {
-        for (int i = 0, x = 0; i < 10 && x < 6; ++i) {
-            HashMap<String, Integer> count = new HashMap<>();
-            for(int j = 0; j < wordlist.length-1; j++){
-                for (int k = j + 1; k < wordlist.length; k++){
-                    if(match(wordlist[j], wordlist[k]) == 0){
-                        count.put(wordlist[j], count.getOrDefault(wordlist[j], 0)+1);
-                        count.put(wordlist[k], count.getOrDefault(wordlist[k], 0)+1);
+        int charsMatched = 0;
+        for (int randomGuess = 0; randomGuess < 10 && charsMatched < 6; ++randomGuess) {
+            HashMap<String, Integer> countMap = new HashMap<>();
+            for(int prevWord = 0; prevWord < wordlist.length-1; prevWord++){
+                for (int currWord = prevWord + 1; currWord < wordlist.length; currWord++){
+                    if(match(wordlist[prevWord], wordlist[currWord]) == 0){
+                        countMap.put(wordlist[prevWord], countMap.getOrDefault(wordlist[prevWord], 0)+1);
+                        countMap.put(wordlist[currWord], countMap.getOrDefault(wordlist[currWord], 0)+1);
                     }
                 }
             }
             String guess = "";
             int min0 = 100;
             for (String w : wordlist)
-                if (count.getOrDefault(w, 0) < min0) {
+                if (countMap.getOrDefault(w, 0) < min0) {
                     guess = w;
-                    min0 = count.getOrDefault(w, 0);
+                    min0 = countMap.getOrDefault(w, 0);
                 }
             try {
-                x = master.guess(guess);
+                charsMatched = master.guess(guess);
             } catch (Exception e) {
                 if(e instanceof IllegalArgumentException) {
                     System.out.println("You failed to guess the word in 10 tries");
@@ -56,7 +57,7 @@ public class L0843GuessTheWord {
             }
             List<String> wordlist2 = new ArrayList<>();
             for (String w : wordlist)
-                if (match(guess, w) == x)
+                if (match(guess, w) == charsMatched)
                     wordlist2.add(w);
             wordlist = wordlist2.toArray(new String[0]);
         }
