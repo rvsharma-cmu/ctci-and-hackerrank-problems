@@ -7,7 +7,7 @@ import java.util.Map;
  * given an array and a target sum, find two numbers that add up to the given
  * target number given
  */
-public class LC001TwoSum {
+public class LC0001TwoSum {
 
     /**
      * brute force

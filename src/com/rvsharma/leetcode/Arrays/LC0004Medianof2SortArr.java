@@ -4,7 +4,7 @@ package com.rvsharma.leetcode.Arrays;
  * solution taken from @see <a href="https://github.com/mission-peace/interview/blob/master/src/com/interview/binarysearch/MedianOfTwoSortedArrayOfDifferentLength.java"> Tushar Roy GitHub</a>
  * Video explanation link: https://www.youtube.com/watch?v=LPFhl65R7ww
  */
-public class LC004Medianof2SortArr {
+public class LC0004Medianof2SortArr {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
         if(nums1.length > nums2.length) {
@@ -44,7 +44,7 @@ public class LC004Medianof2SortArr {
         int[] x = {1, 3, 8, 9, 15};
         int[] y = {7, 11, 19, 21, 18, 25};
 
-        LC004Medianof2SortArr mm = new LC004Medianof2SortArr();
+        LC0004Medianof2SortArr mm = new LC0004Medianof2SortArr();
         double value = mm.findMedianSortedArrays(x, y);
         System.out.println("The median of two sorted array is: " + value);
     }

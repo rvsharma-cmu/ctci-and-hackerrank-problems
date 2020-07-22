@@ -3,11 +3,11 @@ package com.rvsharma.leetcode.LinkedList;
 import com.rvsharma.Ch02LinkedList.Introduction.LLNode;
 import com.rvsharma.leetcode.LinkedList.Utilities.ListNode;
 
-public class LC021MergeTwoSortedLL {
+public class LC0021MergeTwoSortedLL {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2){
 
-        ListNode node = new ListNode(0), temp = node, t1 = l1, t2 = l2;
+        ListNode dummy = new ListNode(0), temp = dummy, t1 = l1, t2 = l2;
 
         while (t1 != null && t2 != null) {
             if (t1.val < t2.val) {
@@ -33,6 +33,6 @@ public class LC021MergeTwoSortedLL {
                 temp = temp.next;
             }
         }
-        return node.next;
+        return dummy.next;
     }
 }

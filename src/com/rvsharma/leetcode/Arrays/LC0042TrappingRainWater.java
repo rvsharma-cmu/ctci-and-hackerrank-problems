@@ -2,7 +2,7 @@ package com.rvsharma.leetcode.Arrays;
 
 import java.util.Stack;
 
-public class LC042TrappingRainWater {
+public class LC0042TrappingRainWater {
 
     public int rainWaterBrute(int[] heights) {
         int answer = 0;
@@ -63,7 +63,7 @@ public class LC042TrappingRainWater {
             if(maxLeft < height[left]) maxLeft = height[left];
             if(maxRight < height[right]) maxRight = height[right];
 
-            if (maxLeft < maxRight) {
+            if (height[left] < height[right]) {
                 ans += Math.max(0, maxLeft - height[left]);
                 left++;
             } else {
@@ -72,5 +72,31 @@ public class LC042TrappingRainWater {
             }
         }
         return ans;
+    }
+
+    public int rainWaterDP(int[] height) {
+        int n = height.length, ans = 0;
+        int[] leftMax = new int[n], rightMax = new int[n];
+
+        leftMax[0] = height[0];
+        for(int i = 1; i < n; i++){
+            leftMax[i] = Math.max(height[i], leftMax[i-1]);
+        }
+
+        rightMax[n-1] = height[n-1];
+        for(int i = n-2; i >= 0; i--){
+            rightMax[i] = Math.max(rightMax[i+1], height[i]);
+        }
+
+        for(int i = 0; i < n; i++){
+            ans += Math.min(leftMax[i], rightMax[i]) - height[i];
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        int[] heights = {0,1,0,2,1,0,1,3,2,1,2,1};
+        LC0042TrappingRainWater trappingRainWater = new LC0042TrappingRainWater();
+        System.out.println(trappingRainWater.rainWaterTwoPointer(heights));
     }
 }

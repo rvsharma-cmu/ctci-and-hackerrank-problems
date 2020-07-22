@@ -11,7 +11,7 @@ class LC0253MeetingRooms2 {
         // sort the intervals array by the meeting starting time
         Arrays.sort(intervals, (o1, o2) -> Integer.compare(o1[0], o2[0]));
         // initialize priority queue
-        PriorityQueue<Integer> pq = new PriorityQueue<>((first, second) -> Integer.compare(first,second));
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
         // add first meeting end time in the pq
         pq.add(intervals[0][1]);
         for(int i = 1; i < intervals.length; i++){

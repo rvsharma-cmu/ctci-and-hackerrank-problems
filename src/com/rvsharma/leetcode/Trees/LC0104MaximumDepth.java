@@ -1,7 +1,9 @@
 package com.rvsharma.leetcode.Trees;
 
+import com.rvsharma.leetcode.Trees.Utilities.BTreePrinter;
 import com.rvsharma.leetcode.Trees.Utilities.TreeNode;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -13,7 +15,7 @@ import java.util.Stack;
  *
  * Note: A leaf is a node with no children.
  */
-public class Q0104MaximumDepth {
+public class LC0104MaximumDepth {
     public static int maxDepth(TreeNode root){
 
         if(root == null) return 0;
@@ -41,15 +43,8 @@ public class Q0104MaximumDepth {
 
     public static void main(String[] args){
 
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20);
-        root.right.left = new TreeNode(15);
-        root.right.right= new TreeNode(7);
-        root.right.left.left = new TreeNode(3);
-        root.right.left.right = new TreeNode(6);
-        System.out.println("Tree in in-order is ");
-        TreeNode.printTreeInorder(root);
+        TreeNode root = TreeNode.deserialize("3,9,20,n,n,15,7,3,6");
+        BTreePrinter.printNode(root);
         int maxDepth = maxDepth(root);
         System.out.println("Maximum depth of the tree is " + maxDepth);
     }

@@ -1,6 +1,6 @@
 package com.rvsharma.leetcode.Arrays;
 
-public class LC053MaxSubArray {
+public class LC0053MaxSubArray {
 
     public int maxSubArray(int[] nums) {
         return helper(nums, 0, nums.length - 1);

@@ -6,7 +6,7 @@ import com.rvsharma.leetcode.LinkedList.Utilities.ListNode;
  * Given two linkedlist with reverse order numbering, return a resultant linked-list
  * that gives you the output of the sum of these two linked lists.
  */
-public class LC002AddTwoNumbers {
+public class LC0002AddTwoNumbers {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode result = new ListNode(0);

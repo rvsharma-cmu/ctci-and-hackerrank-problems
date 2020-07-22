@@ -3,7 +3,7 @@ package com.rvsharma.leetcode.DynamicProgramming;
 import java.util.Arrays;
 
 public class LC0221MaximumSquare {
-    public int maximalSquare(char[][] matrix) {
+    public int maximalSquare_bruteForce(char[][] matrix) {
         int rows = matrix.length, cols = rows > 0 ? matrix[0].length : 0;
         int maxsqlen = 0;
         for (int i = 0; i < rows; i++) {
@@ -42,11 +42,27 @@ public class LC0221MaximumSquare {
         return sqlen;
     }
 
+    public int maximalSquare(char[][] mat) {
+        if (mat == null || mat.length == 0) return 0;
+        int rows = mat.length, cols = mat[0].length;
+        int[][] dp = new int[rows + 1][cols + 1];
+        int maxLen = 0;
+        for(int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= cols; j++) {
+                if(mat[i-1][j-1] == '1'){
+                    dp[i][j] = Math.min(Math.min(dp[i-1][j-1], dp[i][j-1]), dp[i-1][j]) + 1;
+                    maxLen = Math.max(maxLen, dp[i][j]);
+                }
+            }
+        }
+        return maxLen * maxLen;
+    }
+
     public static void main(String[] args) {
 
         char[][] mat = {{'1','0','1','0','0'}, {'1','0','1','1','1'}, {'1','1','1','1','1'}, {'1','0','0','1','0'}};
         LC0221MaximumSquare sol = new LC0221MaximumSquare();
         int square = sol.maximalSquare(mat);
-        System.out.println("maximalSquare" + square);
+        System.out.println("maximalSquare " + square);
     }
 }
