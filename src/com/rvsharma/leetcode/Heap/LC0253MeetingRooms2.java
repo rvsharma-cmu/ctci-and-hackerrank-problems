@@ -27,10 +27,40 @@ class LC0253MeetingRooms2 {
         return pq.size();
     }
 
+    static class Solution {
+        public String countAndSay(int n) {
+            if(n==0)
+                return null;
+            if(n==1)
+                return "1";
+            else{
+                String s=countAndSay(n-1);
+                StringBuilder sb=new StringBuilder();
+                char[] c=s.toCharArray();
+                int count=1;
+                for(int i=1; i < c.length;i++){
+                    if(c[i]==c[i-1])
+                        count++;
+                    else{
+                        sb.append(count).append(c[i-1]);
+                        count=1;
+                    }
+                }
+                sb.append(count).append(c[c.length-1]);
+                return sb.toString();
+            }
+        }
+    }
+
+
     public static void main(String[] args) {
         int[][] intervals = {{0,30},{5,10},{15,20}};
         LC0253MeetingRooms2 sol = new LC0253MeetingRooms2();
         int output = sol.minMeetingRooms(intervals);
         System.out.println("the minimum number of meeting rooms is " + output);
+        Solution countSay = new Solution();
+        String say = countSay.countAndSay(6);
+        System.out.println(say);
+
     }
 }

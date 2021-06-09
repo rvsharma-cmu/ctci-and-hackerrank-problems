@@ -69,6 +69,12 @@ public class TreeNode {
         return root;
     }
 
+    /**
+     * Method to deserialze a serialized string representing a binary tree
+     *
+     * @param data Serialized string having comma separated values of trees. Null nodes are represented by n
+     * @return returns the root of the de-serialized binary tree
+     */
     public static TreeNode deserialize(String data) {
         if (data.equals("")) return null;
         Queue<TreeNode> q = new LinkedList<>();
@@ -77,12 +83,12 @@ public class TreeNode {
         q.add(root);
         for (int i = 1; i < values.length; i++) {
             TreeNode parent = q.poll();
-            if (!values[i].equals("n")) {
+            if (!values[i].equals("null")) {
                 TreeNode left = new TreeNode(Integer.parseInt(values[i].trim()));
                 parent.left = left;
                 q.add(left);
             }
-            if ((i+1) < values.length && !values[++i].equals("n")) {
+            if ((i+1) < values.length && !values[++i].equals("null")) {
                 TreeNode right = new TreeNode(Integer.parseInt(values[i].trim()));
                 parent.right = right;
                 q.add(right);

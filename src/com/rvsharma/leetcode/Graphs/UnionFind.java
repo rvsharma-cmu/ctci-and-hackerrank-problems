@@ -1,39 +1,47 @@
 package com.rvsharma.leetcode.Graphs;
 
+
+/**
+ * Union Find by path compression and rank
+ * Source: https://leetcode.com/problems/friend-circles/discuss/101336/Java-solution-Union-Find/266043
+ *
+ */
 public class UnionFind {
-    int[] parent;
-    int rows, cols;
-    int disjointCount = 0;
-    public UnionFind(char[][] grid){
-        rows = grid.length;
-        cols = grid[0].length;
-        parent = new int[rows * cols];
-        for(int i =0 ; i < rows; i++){
-            for(int j = 0; j < cols; j++){
-                int id = i * cols + j;
-                if(grid[i][j] == '1') {
-                    disjointCount++;
-                    parent[id] = id;
-                }
-            }
+    private final int[] parent;
+    private final int[] rank;
+    int count;
+    public UnionFind(int n){
+        parent = new int[n];
+        rank = new int[n];
+        count = n;
+        for(int i = 0; i < n; i++){
+            parent[i] = i;
+            rank[i] = 1;
         }
     }
 
-    int find(int node) {
-
-        if(parent[node] == node) {
-            return node;
+    // with path-compression
+    public int find(int p) {
+        while (p != parent[p]){
+            parent[p] = parent[parent[p]];
+            p = parent[p];
         }
-        parent[node] = find(parent[node]);
-        return parent[node];
+        return p;
     }
 
-    void union(int node1, int node2){
-        int find1 = find(node1);
-        int find2 = find(node2);
-        if (find1 != find2) {
-            parent[find1] = find2;
-            disjointCount--;
+    // with union by rank
+    public void union(int p, int q){
+        int rootP = find(p);
+        int rootQ = find(q);
+        if (rootP == rootQ) return;
+
+        if(rank[rootP] > rank[rootQ]){
+            parent[rootQ] = rootP;
+            rank[rootP] += rank[rootQ];
+        } else {
+            parent[rootP] = rootQ;
+            rank[rootQ] += rank[rootP];
         }
+        count--;
     }
 }

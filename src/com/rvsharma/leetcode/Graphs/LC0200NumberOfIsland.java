@@ -1,6 +1,9 @@
 package com.rvsharma.leetcode.Graphs;
 
-public class LC200NumberOfIsland {
+import java.util.HashSet;
+import java.util.Set;
+
+public class LC0200NumberOfIsland {
 
     /**
      * DFS algorithm for finding the number of island. Basically this reduces to
@@ -8,7 +11,7 @@ public class LC200NumberOfIsland {
      * @param grid
      * @return
      */
-    public int numIslandsDFS(char[][] grid) {
+    public int numIslands_DFS(char[][] grid) {
         if(grid == null || grid.length == 0 || grid[0].length == 0){
             return 0;
         }
@@ -37,14 +40,15 @@ public class LC200NumberOfIsland {
     }
 
     int[][] directions = {{-1, 0}, {0, -1}, {0, 1}, {1, 0}};
+
     /**
      * Union Find; navigate the nodes on the grid, while checking their neighbors
      * whether they are land or water; if they are land, union them
      */
-    public int numIslandUF(char[][] grid) {
+    public int numIslands(char[][] grid) {
 
-        UnionFind uf = new UnionFind(grid);
         int rows = grid.length, cols = grid[0].length;
+        UnionFind uf = new UnionFind(rows * cols);
         for(int i = 0; i < rows; i++){
             for(int j = 0; j < cols; j++){
                 if(grid[i][j] == '1') {
@@ -60,6 +64,22 @@ public class LC200NumberOfIsland {
                 }
             }
         }
-        return uf.disjointCount;
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < rows; i++){
+            for (int j = 0; j < cols; j++){
+                if (grid[i][j] == '1'){
+                    set.add(uf.find(i*cols + j));
+                }
+            }
+        }
+        return set.size();
     }
+
+    public static void main(String[] args) {
+        char[][] grid = {{'1','1','1','1','0'},{'1','1','0','1','0'},{'1','1','0','0','0'},{'0','0','0','0','0'}};
+        LC0200NumberOfIsland sol = new LC0200NumberOfIsland();
+        int islands = sol.numIslands(grid);
+        System.out.println(islands);
+    }
+
 }
